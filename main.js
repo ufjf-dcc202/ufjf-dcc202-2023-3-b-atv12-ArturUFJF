@@ -37,3 +37,19 @@ function preencheLista(lista, estoqueDaPessoa) {
         lista.appendChild(li);
     }
 }
+
+function atualizaTela() {
+    const estoque = getEstoque();
+    olJoao.innerHTML = "";
+    olMaria.innerHTML = "";
+    document.entrada.quantidade.value = 1;
+    document.entrada.fruta.value = "maca";
+
+    if (estoque.joao && estoque.joao.length > 0) {
+        preencheLista(olJoao, estoque.joao);
+    }
+
+    if (estoque.maria && estoque.maria.length > 0) {
+        preencheLista(olMaria, estoque.maria);
+    }
+}
