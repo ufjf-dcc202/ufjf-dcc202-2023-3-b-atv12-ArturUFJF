@@ -26,3 +26,14 @@ function leFormulario(event) {
     transacaoNoEstoque(origem, destino, fruta, quantidade);
     atualizaTela();
 }
+
+function preencheLista(lista, estoqueDaPessoa) {
+    lista.textContent = "";
+
+    for (let i = 0; i < estoqueDaPessoa.length; i++) {
+        const monte = estoqueDaPessoa[i];
+        const li = document.createElement('li');
+        li.textContent = `${monte.tipo}: ${monte.quantidade}`;
+        lista.appendChild(li);
+    }
+}
